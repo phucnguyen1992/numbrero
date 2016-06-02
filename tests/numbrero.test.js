@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import * as numbrero from '../src/numbrero';
+import * from '../src/numbrero';
 
 describe('numbrero', () => {
   describe('formatCurrency', () => {
@@ -14,7 +14,7 @@ describe('numbrero', () => {
 
     beforeArray.forEach((testValue, i) => {
       it(`returns a formatted value for ${testValue}`, () => {
-        let result = numbrero.formatCurrency(testValue);
+        let result = formatCurrency(testValue);
         expect(result).to.equal(afterArray[i]);
       });
     });
@@ -29,7 +29,7 @@ describe('numbrero', () => {
 
     beforeArray.forEach((testValue, i) => {
       it(`returns an unformatted value for ${testValue}`, () => {
-        let result = numbrero.unformatCurrency(testValue);
+        let result = unformatCurrency(testValue);
         expect(result).to.equal(afterArray[i]);
       });
     });
@@ -44,12 +44,12 @@ describe('numbrero', () => {
 
     beforeArray.forEach((testValue, i) => {
       it(`returns a formatted value for ${testValue}`, () => {
-        let result = numbrero.formatZero(testValue);
+        let result = formatZero(testValue);
         expect(result).to.equal(afterArray[i]);
       });
     });
     it('returns a formatted value for 0 using the provided string', () => {
-      let result = numbrero.formatZero(0, 'Foobar');
+      let result = formatZero(0, 'Foobar');
       expect(result).to.equal('Foobar');
     });
   });
@@ -63,7 +63,7 @@ describe('numbrero', () => {
 
     beforeArray.forEach((testValue, i) => {
       it(`returns a formatted value for ${testValue}`, () => {
-        let result = numbrero.formatPercentage(testValue);
+        let result = formatPercentage(testValue);
         expect(result).to.equal(afterArray[i]);
       });
     });
