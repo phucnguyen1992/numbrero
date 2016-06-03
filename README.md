@@ -1,2 +1,2 @@
 # numbrero
-Number formatting for milli
+Number formatter helper for numbers type stuff
