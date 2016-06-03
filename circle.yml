@@ -1,3 +1,6 @@
 machine:
   node:
     version: stable
+test:
+  post:
+    - babel src -d $CIRCLE_ARTIFACTS
