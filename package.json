@@ -1,23 +1,25 @@
 {
+  "author": "Andrew Carr <andrw.carr@gmail.com> (https://github.com/2metres)",
   "name": "numbrero",
   "version": "1.0.0",
   "description": "Number formatting for milli",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register"
+    "test": "mocha --compilers js:babel-core/register",
+    "build": "babel src -d lib"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SplitIt/numbrero.git"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/SplitIt/numbrero/issues"
   },
   "homepage": "https://github.com/SplitIt/numbrero#readme",
   "devDependencies": {
+    "babel-cli": "^6.9.0",
     "babel-core": "^6.5.2",
     "babel-preset-es2015": "^6.9.0",
     "chai": "^3.5.0",
