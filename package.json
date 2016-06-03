@@ -3,7 +3,7 @@
   "name": "numbrero",
   "version": "1.0.0",
   "description": "Number formatting for milli",
-  "main": "index.js",
+  "main": "lib/numbrero.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
     "build": "babel src -d lib"
@@ -13,7 +13,6 @@
     "url": "git+https://github.com/SplitIt/numbrero.git"
   },
   "keywords": [],
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/SplitIt/numbrero/issues"
   },
