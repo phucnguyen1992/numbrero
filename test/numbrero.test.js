@@ -2,14 +2,30 @@ import { expect } from 'chai';
 import * as numbrero from '../lib/numbrero';
 
 describe('numbrero', () => {
-  describe('formatCurrency', () => {
+
+  describe('formatCurrencyWithPrefix', () => {
     const beforeArray = [
-      '0', '1', '12', '123', '12345', '123456789', '12345d6789000', 1234,
-      'abc1', '123b', '1234b', 'a1234', undefined, ''
+      '', NaN, undefined, 12345678, 123.245, '-12345678.00'
     ];
     const afterArray = [
-      '0', '1', '12', '123', '12,345', '123,456,789', '123,456,789,000', '1,234',
-      '1', '123', '1,234', '1,234', '', ''
+      '$0', '$0', '$0', '$12,345,678', '$123.25', '-$12,345,678'
+    ];
+
+    beforeArray.forEach((testValue, i) => {
+      it(`returns a formatted value with $ prefix for ${testValue}`, () => {
+        let result = numbrero.formatCurrencyWithPrefix(testValue);
+        expect(result).to.equal(afterArray[i]);
+      });
+    });
+  });
+
+
+  describe('formatCurrency', () => {
+    const beforeArray = [
+      '0', '1', '12', '123', '12345', '123456789', '12345.678', 1234, ''
+    ];
+    const afterArray = [
+      '0', '1', '12', '123', '12,345', '123,456,789', '12,345.68', '1,234', ''
     ];
 
     beforeArray.forEach((testValue, i) => {
